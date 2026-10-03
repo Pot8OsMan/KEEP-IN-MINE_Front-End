@@ -16,6 +16,15 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --nav-bg: #555;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ededed;
+    --foreground: #0a0a0a;
+    --nav-bg: #ccc;
   }
 }
 
@@ -23,4 +32,45 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav_bar_container {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid gray;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_bar a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav_bar a .logo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.nav_bar a .logo div {
+  color: red;
+}
+
+.app_logo {
+  width: 42px;
+}
+
+.nav_bar nav {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
