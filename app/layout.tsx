@@ -32,12 +32,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </Link>
             <nav>
               <Link href={"/dashboard"}>Dashboard</Link>
-              <Link href={"/dashboard"}>Dashboard</Link>
-              <Link href={"/dashboard"}>Dashboard</Link>
+              <Link href={"/dashboard"}>Work List</Link>
+              <Link href={"/dashboard"}>Events</Link>
             </nav>
           </div>
         </header>
-        {children}
+
+        <main className="mx-auto flex w-full min-w-6xl flex-col px-4 py-8">{children}</main>
       </body>
     </html>
   );
