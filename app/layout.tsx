@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import AuthButton from "@/components/AuthButton/AuthButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +28,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <header className="nav_bar_container">
           <div className="nav_bar">
-            <Link href={"/"}><img src="/Logo_.svg" alt="logo" className="app_logo"/>
+            <Link href={"/"}>
+              <img src="/Logo(Light).svg" alt="logo" className="app_logo logo-dark"/>
+              <img src="/Logo(Dark).svg" alt="logo" className="app_logo logo-light"/>
               <div className="logo">KEEP IN <div>MINE</div> </div>
             </Link>
             <nav>
               <Link href={"/dashboard"}>Dashboard</Link>
               <Link href={"/dashboard"}>Work List</Link>
               <Link href={"/dashboard"}>Events</Link>
+              <AuthButton />
             </nav>
           </div>
         </header>

@@ -14,19 +14,35 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(to bottom, #003470, #2d224e, #2b162f, #1d0d17, #000000);
+    --background: #000000;
     --foreground: #ededed;
-    --nav-bg: #070e4799;
+    --nav-bg: #22222290;
     --secondary-bg: rgba(255, 255, 255, 0.72);
+  }
+
+  .logo-dark {
+    display: none;
+  }
+
+  .logo-light {
+    display: block;
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: linear-gradient(to bottom, #2c85b8, #7aa0cb, #afbddc, #dadced, #ffffff);
+    --background: #ffff;
     --foreground: #0a0a0a;
-    --nav-bg: #c0deef99;
+    --nav-bg: #dcdcdc99;
     --secondary-bg: rgba(0, 0, 0, 0.72);
+  }
+
+  .logo-light {
+    display: none;
+  }
+
+  .logo-dark {
+    display: block;
   }
 }
 
@@ -41,7 +57,6 @@ body {
   padding: 10px 20px;
   background-color: var(--nav-bg);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--secondary-bg);
 }
 
 .nav_bar {
@@ -69,6 +84,7 @@ body {
 
 .app_logo {
   width: 42px;
+  transform: scale(1.25) translateX(-5px);
 }
 
 .nav_bar nav {
