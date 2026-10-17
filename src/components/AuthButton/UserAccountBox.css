@@ -1,0 +1,35 @@
+.auth-user-container {
+    width: 200px;
+    height: 100%;
+}
+
+.auth-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .login-account-button {
+        background: linear-gradient(145deg, #2e2e2e, #373737) !important;
+        box-shadow: 0 0 8px #cbc6c6 inset;
+        border: 2px solid #fff;
+    }
+
+    .register-account-button {
+        color: #000;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff) !important;
+        box-shadow: 0 0 8px #d9d9d9;
+        border: 2px solid #333333;
+    }
+}
+
+.auth-button {
+    padding: 8px 0;
+    min-width: 45%;
+    background-color: gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}

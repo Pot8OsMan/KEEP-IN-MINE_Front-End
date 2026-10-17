@@ -84,7 +84,7 @@ body {
 
 .app_logo {
   width: 42px;
-  transform: scale(1.25) translateX(-5px);
+  transform: scale(1.25) translate(-5px, -5px);
 }
 
 .nav_bar nav {
