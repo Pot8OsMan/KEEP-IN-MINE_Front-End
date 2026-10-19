@@ -12,9 +12,42 @@
 
 @media (prefers-color-scheme: dark) {
     .login-account-button {
-        background: linear-gradient(145deg, #2e2e2e, #373737) !important;
+        background: linear-gradient(145deg, #222222, #282828);
         box-shadow: 0 0 8px #cbc6c6 inset;
         border: 2px solid #fff;
+    }
+
+    .auth-button.login-account-button:hover {
+        background: #ffffff !important;
+        box-shadow: 0 0 15px #cbc6c6;
+        border: 2px solid #adadad;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .auth-button.login-account-button .log-in-ico {
+        position: absolute;
+        color: #000;
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: opacity 0.3s ease;
+    }
+
+    .auth-button.login-account-button:hover .log-in-ico {
+        opacity: 1;
+        transform: none;
+        animation: loginIco 2s infinite;
+    }
+
+    @keyframes loginIco {
+        0% {
+            transform: translate(-3px,0);
+        }
+        50% {
+            transform: translate(3px,0);
+        }
+        100% {
+            transform: translate(-3px,0);
+        }
     }
 
     .register-account-button {
@@ -23,13 +56,135 @@
         box-shadow: 0 0 8px #d9d9d9;
         border: 2px solid #333333;
     }
+
+    .auth-button.register-account-button span {
+        animation: signinText-appear 0.66s forwards;
+    }
+
+    @keyframes signinText-disappear {
+        0% {
+            transform: translate(0,0);
+        }
+        100% {
+            transform: translate(-80px,0);
+        }
+    }
+
+    .auth-button.register-account-button:hover span {
+        animation: signinText-disappear 0.54s forwards;
+    }
+
+    @keyframes signinText-appear {
+        0% {
+            transform: translate(80px,0);
+        }
+        100% {
+            transform: translate(0,0);
+        }
+    }
+
+    .auth-button.register-account-button .sign-up-ico {
+        position: absolute;
+        animation: signinIco-disappear 0.6s forwards;
+    }
+
+    @keyframes signinIco-disappear {
+        0% {
+            transform: translate(0,0);
+        }
+        100% {
+            transform: translate(-55px,0);
+        }
+    }
+
+    .auth-button.register-account-button:hover .sign-up-ico {
+        animation: signinIco-appear 0.6s forwards;
+    }
+
+    @keyframes signinIco-appear {
+        0% {
+            transform: translate(55px,0);
+        }
+        100% {
+            transform: translate(0,0);
+        }
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .login-account-button {
+        color: #fff;
+        background: linear-gradient(145deg, #3b3b3b, #5b5b5b) !important;
+        box-shadow: 0 0 8px #6c6b6b;
+        border: 2px solid #000;
+    }
+
+    .register-account-button {
+        color: #000;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff) !important;
+        box-shadow: 0 0 6px #656565 inset;
+        border: 2px solid #707070;
+    }
+
+    .auth-button.register-account-button span {
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-button.register-account-button .sign-up-ico {
+        position: absolute;
+        transform: translateY(40px);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-button.login-account-button span {
+        transform: translateX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-button.login-account-button .log-in-ico {
+        position: absolute;
+        transform: translateX(-80px);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-button.register-account-button:hover span {
+        transform: translateY(-40px);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-button.register-account-button:hover .sign-up-ico {
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-button.login-account-button:hover {
+        transform: translate(-1px,-1px);
+        box-shadow: 2px 2px 5px #454545;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .auth-button.login-account-button:hover span {
+        transform: translateX(80px);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .auth-button.login-account-button:hover .log-in-ico {
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 }
 
 .auth-button {
+    position: relative;
     padding: 8px 0;
     min-width: 45%;
     background-color: gray;
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
