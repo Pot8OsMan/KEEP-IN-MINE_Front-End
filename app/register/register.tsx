@@ -1,6 +1,6 @@
 'use client';
 
-import LoginPage from '@/src/views/RegisterPage/RegisterPage';
+import RegisterPage from '@/src/views/RegisterPage/RegisterPage';
 import { useState, useEffect } from 'react';
 
 export default function register() {
