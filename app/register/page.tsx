@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 
 export default function register() {
     return (
-        <div className="app">
-          <RegisterPage />
-        </div>
-      );
+      <div className="app">
+        <RegisterPage />
+      </div>
+    );
 }

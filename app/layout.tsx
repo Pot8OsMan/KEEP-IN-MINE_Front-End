@@ -42,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
         </header>
 
-        <main className="mx-auto flex w-full min-w-6xl flex-col px-4 py-8">{children}</main>
+        <main /*className="mx-auto flex w-full min-w-6xl flex-col px-4 py-8"*/>{children}</main>
       </body>
     </html>
   );

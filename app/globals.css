@@ -68,6 +68,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn {
+    position: relative;
+    padding: 8px 0;
+    min-width: 45%;
+    background-color: gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
 .nav_bar_container {
   width: 100%;
   padding: 10px 20px;
