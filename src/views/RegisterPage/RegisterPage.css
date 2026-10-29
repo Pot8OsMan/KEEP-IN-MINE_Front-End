@@ -26,6 +26,7 @@
 }
 
 .register-box-container form {
+    position: relative;
     width: 80%;
     height: 100%;
     display: flex;
@@ -49,6 +50,12 @@
     padding-left: 20px;
 }
 
+.required-field {
+    width: 0;
+    transform: translate(10px, -10px);
+    color: rgb(180, 40, 40);
+}
+
 .register-box-container .register-btn {
     margin: 2rem 0 1rem 0;
     border: none;
@@ -67,4 +74,10 @@
     background-color: #5e6681;
     color: #ffeba7;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+}
+
+.register-error-message {
+    position: absolute;
+    bottom: 110px;
+    color: red;
 }

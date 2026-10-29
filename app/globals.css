@@ -29,11 +29,37 @@
   }
 
   .loader {
-    background-color: #000;
+    background-color: #333;
   }
   
   .loader .loader-text {
     color: #ffffff;
+  }
+
+  
+  .loader .item1 {
+    --size: 50%;
+    background-color: #ebebeb30;
+    animation: size1_1 2s infinite alternate;
+    z-index: 1;
+  }
+
+  .loader .item2 {
+    --size: 40%;
+    background-color: #ebebeb20;
+    animation: size1_2 2s infinite alternate;
+    z-index: 2;
+  }
+
+  .loader .item3 {
+    --size: 30%;
+    background-color: #ebebeb10;
+    animation: size1_3 2s infinite alternate;
+    z-index: 3;
+  }
+
+  .btn-link:hover {
+    text-decoration: underline;
   }
 }
 
@@ -60,6 +86,28 @@
   .loader .loader-text {
     color: #000000;
   }
+
+  .loader .item1 {
+    --size: 50%;
+    background-color: #58585830;
+    animation: size1_1 2s infinite alternate;
+    z-index: 1;
+  }
+
+  .loader .item2 {
+    --size: 40%;
+    background-color: #58585820;
+    animation: size1_2 2s infinite alternate;
+    z-index: 2;
+  }
+
+  .loader .item3 {
+    --size: 30%;
+    background-color: #58585810;
+    animation: size1_3 2s infinite alternate;
+    z-index: 3;
+  }
+
 }
 
 body {
@@ -135,6 +183,9 @@ body {
   justify-content: center;
   align-items: center;
   scale: 1;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 .loader .loader-container {
   width: 300px;
@@ -147,6 +198,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 5;
+  scale: 0.6;
 }
 .loader .loader-container .coffee-header {
   padding: 10px;
@@ -392,7 +445,63 @@ body {
 }
 
 .loader .loader-text {
-  transform: translateY(160px);
+  transform: translateY(180px);
   font-weight: 700;
-  font-size: 1.6em;
+  font-size: 1.4em;
+}
+
+
+.item1,
+.item2,
+.item3 {
+  position: absolute;
+  background-color: transparent;
+  left: calc(50% - (var(--size) / 4));
+  top: calc(50% - (var(--size) / 2));
+  height: var(--size);
+  width: calc(var(--size) / 2);
+  border-radius: 50%;
+
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes size1_1 {
+
+  0%,
+  25% {
+    transform: scale(-.35);
+  }
+
+  100% {
+    transform: scale(.8);
+  }
+}
+
+@keyframes size1_2 {
+
+  0%,
+  50% {
+    transform: scale(-.25);
+  }
+
+  100% {
+    transform: scale(.9);
+  }
+}
+
+@keyframes size1_3 {
+
+  0%,
+  75% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loader.exit {
+  opacity: 0;
 }

@@ -5,19 +5,29 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isStopLoading, setIsStopLoading] = useState(false);
 
   useEffect(() => {
     const loadingData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 4000));
       setIsLoading(false);
     };
 
+    const commenceEntry = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      setIsStopLoading(true);
+    };
+
     loadingData();
+    commenceEntry();
   }, []);
 
-  if (isLoading) {
+  if (isLoading || !isStopLoading) {
     return (
-      <div className="loader">
+      <div className={`loader ${isStopLoading ? 'exit' : ''}`}>
+        <div className="item1"></div>
+        <div className="item2"></div>
+        <div className="item3"></div>
         <div className="loader-container">
           <div className="coffee-header">
             <div className="coffee-header__buttons"></div>
