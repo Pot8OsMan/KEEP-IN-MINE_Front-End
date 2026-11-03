@@ -18,3 +18,20 @@ export const signUp = async (username, email, password) => {
         throw error;
     }
 };
+
+export const logIn = async (email, password) => {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/auth/login`, {
+            email,
+            password,
+        });
+
+        return response.data;
+    } catch (error) {
+        console.error("Sign up failed:", error);
+        if (error.code === 'ERR_NETWORK') {
+            return error.data;
+        }
+        throw error;
+    }
+};

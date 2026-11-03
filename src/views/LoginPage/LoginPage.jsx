@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import './LoginPage.css'
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [emailError, setEmailError] = useState("");
+  const [error, setError] = useState("");
+
   return (
     <div className='login-page'>
       <div className='login-box-container'>

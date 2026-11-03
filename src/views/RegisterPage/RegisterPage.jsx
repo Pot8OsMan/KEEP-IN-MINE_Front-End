@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import './RegisterPage.css'
 
+import { signUp } from '../../services/userAuthController'
 import { showLoading, updateToast } from '../../utils/toastUtils.jsx';
 
 export default function RegisterPage() {
@@ -10,6 +12,8 @@ export default function RegisterPage() {
 
   const [emailError, setEmailError] = useState("");
   const [error, setError] = useState("");
+  
+  const router = useRouter();
   
   // Email validation regex pattern
   const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -24,6 +28,7 @@ export default function RegisterPage() {
       return true;
     } else {
       setEmailError("Please enter a valid email address");
+      updateToast(toastId, "error", emailError || "Please enter Email properly");
       return false;
     }
   };
@@ -80,7 +85,7 @@ export default function RegisterPage() {
   };
 
   const handleNavigateToLogin = () => {
-    setShowExitAnimation(true);
+    // setShowExitAnimation(true);
     setTimeout(() => {
       router.push("/login");
     }, 800);
@@ -97,15 +102,15 @@ export default function RegisterPage() {
           </div>
           <div className='input-field'>
             <input autoComplete="off" id="email" placeholder="Email" className="input-field" name="email" type="email" 
-            value={email} onChange={(e) => setEmail(e.target.value)} required/><span className='required-field'>*</span>
+            value={email} onChange={handleEmailChange} required/><span className='required-field'>*</span>
           </div>
           <div className='input-field'>
             <input autoComplete="off" id="password" placeholder="Password" className="input-field" name="password" type="password" 
             value={password} onChange={(e) => setPassword(e.target.value)} required minLength="6"/><span className='required-field'>*</span>
           </div>
           {error && <p className="register-error-message">{error}</p>}
-          <button className="btn register-btn" type="submit">Register</button>
-          <a href="/login" className="btn-link">Already have an account?</a>
+          <button className="btn register-btn" type="submit" onClick={handleSignup}>Register</button>
+          <a onClick={handleNavigateToLogin} className="btn-link">Already have an account?</a>
         </form>
       </div>
     </div>
