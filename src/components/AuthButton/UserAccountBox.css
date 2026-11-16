@@ -114,14 +114,14 @@
 @media (prefers-color-scheme: light) {
     .login-account-button {
         color: #fff;
-        background: linear-gradient(145deg, #3b3b3b, #5b5b5b) !important;
+        background: linear-gradient(145deg, #3b3b3b, #5b5b5b);
         box-shadow: 0 0 8px #6c6b6b;
         border: 2px solid #000;
     }
 
     .register-account-button {
         color: #000;
-        background: linear-gradient(145deg, #e6e6e6, #ffffff) !important;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
         box-shadow: 0 0 6px #656565 inset;
         border: 2px solid #707070;
     }

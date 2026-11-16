@@ -113,6 +113,10 @@ export default function RegisterPage() {
           <a onClick={handleNavigateToLogin} className="btn-link">Already have an account?</a>
         </form>
       </div>
+
+      <div className="signin-auth-hero">
+
+      </div>
     </div>
   )
 }

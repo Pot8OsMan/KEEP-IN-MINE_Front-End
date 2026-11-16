@@ -45,15 +45,19 @@ export default function LoginPage() {
         <form>
           <div className='input-field'>
             <input autoComplete="off" id="email" placeholder="Email" className="input-field" name="email" type="email"
-            value={email} onChange={(e) => handleEmailChange(e.target.value)} required />
+            value={email} onChange={(e) => handleEmailChange(e.target.value)} required /><span className='required-field'>*</span>
           </div>
           <div className='input-field'>
             <input autoComplete="off" id="password" placeholder="Password" className="input-field" name="password" type="password"
-            value={password} onChange={(e) => setPassword(e.target.value)} required minLength="6" />
+            value={password} onChange={(e) => setPassword(e.target.value)} required minLength="6" /><span className='required-field'>*</span>
           </div>
           <button className="btn login-btn" type="submit">Login</button>
           <div><a href="#" className="btn-link">Forgot your password?</a> <a onClick={handleNavigateToSignIn}></a></div>
         </form>
+      </div>
+
+      <div className='login-auth-hero'>
+
       </div>
     </div>
   )
